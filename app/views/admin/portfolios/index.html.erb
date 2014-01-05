@@ -1,0 +1,69 @@
+<div id="main_container" class="table_margin">
+<div class="row-fluid">
+  <div class="box ">
+    <div class="title">
+      <h4> <span><i class="icon-book"></i>Portfolios</span> </h4>
+    </div>
+    <!-- End .title -->
+    
+    <div class="content top">
+      <table id="datatable_example" class="responsive table table-striped table-bordered" style="width:100%;margin-bottom:0; ">
+        <thead>
+          <tr>
+            <th class="jv no_sort"><label class="checkbox ">
+                <input type="checkbox">
+              </label></th>
+            <th class="jv no_sort span5">Title</th>
+            <th class="to_hide_phone  no_sort span5">Description</th>
+            <th class="ms no_sort ">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @portfolios %>
+        </tbody>
+      </table>
+    </div>
+    <!-- End .content --> 
+  </div>
+  <!-- End box --> 
+</div>
+<!-- End .row-fluid --> 
+</div>
+
+<script type="text/javascript">
+  /**** Specific JS for this page ****/
+  // Datatables
+    $(document).ready(function() {
+    
+      var dontSort = [];
+                $('#datatable_example thead th').each( function () {
+                    if ( $(this).hasClass( 'no_sort' )) {
+                        dontSort.push( { "bSortable": false } );
+                    } else {
+                        dontSort.push( null );
+                    }
+      } );
+      $('#datatable_example').dataTable( {
+        "sDom": "<'row-fluid table_top_bar'<'span12'<'to_hide_phone' f>>>t<'row-fluid control-group full top' <'span4 to_hide_tablet'l><'span8 pagination'p>>",
+         "aaSorting": [[ 1, "asc" ]],
+        "bPaginate": true,
+
+        "sPaginationType": "full_numbers",
+        "bJQueryUI": false,
+        "aoColumns": dontSort,
+        
+      } );
+      $.extend( $.fn.dataTableExt.oStdClasses, {
+        "s`": "dataTables_wrapper form-inline"
+      } );
+
+      $(".chzn-select, .dataTables_length select").chosen({
+                 disable_search_threshold: 10
+      });
+
+      $("#datatable_example_paginate").prepend("<a class='paginate_button' href='" + "<%= new_admin_portfolio_path %>" + "'>Create Portfolio</a>");  
+
+    });
+  
+
+</script>

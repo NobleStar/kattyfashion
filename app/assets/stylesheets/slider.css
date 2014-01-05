@@ -1,0 +1,55 @@
+.slider-wrap{ 
+	width:940px;
+	margin-top:15px;	 
+	}
+.slider{ 
+	width:940px;
+	height:347px;
+	overflow: hidden;
+	position:relative;
+	}
+	
+.slide{
+	width:100%;
+	height:100%;
+	}
+	
+.sli-links{ 
+	display:none;
+	}
+
+	
+	
+.prewbutton, .nextbutton{ 
+	display:block;
+	width:61px;
+	height:61px;
+	position:absolute;
+	top:151px;
+	overflow:hidden;
+	text-indent:-999px;
+	background:url(../images/arrow_slider.png) no-repeat;
+	opacity:0.5;
+	z-index:3;
+	outline:none !important;
+	  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+	}
+	
+.prewbutton{
+left:0px;
+background-position:0px -61px;		
+}
+
+
+.nextbutton{
+right:0px;
+}
+	
+	
+.prewbutton:hover, .nextbutton:hover{
+opacity:1;
+}
+

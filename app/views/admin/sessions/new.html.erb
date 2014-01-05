@@ -1,0 +1,55 @@
+<!--
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, :required => false, :autofocus => true %>
+    <%= f.input :password, :required => false %>
+    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign in" %>
+  </div>
+<% end %>
+
+<%= render "admin/shared/links" %>
+-->
+
+
+<%= simple_form_for(resource, as: resource_name, url: admin_login_path) do |f| %>
+<div class="box paint color_0">
+
+  <div class="title">
+    <h4> <i class="icon-calendar"></i> <span>Sign in</span> </h4>
+  </div>
+
+  <div class="content ">
+    <form class="bs-docs-example form-horizontal">
+
+      <div class="control-group row-fluid">
+        <%= f.label :email, class: "control-label span3" %>
+        <!-- <label class="control-label span3" for="inputPassword">Username</label> -->
+        <div class="controls span9 input-append">
+          <%= f.input_field :email, required: true, placeholder: "Email", pattern: '[^@\s]+@([^@\s]+\.)+[^@\s]+', class: "row-fluid", data: { "auto-focus" => 1 }  %>
+          <!--<input type="password" id="inputUsername" placeholder="Username" class="row-fluid">-->
+          <span class="add-on"><i class="icon-user"></i></span> </div>
+      </div>
+      <div class="control-group row-fluid">
+        <%= f.label :password, class: "control-label span3" %>
+        <!--<label class="control-label span3" for="inputPassword">Password</label>-->
+        <div class="controls span9 input-append">
+          <%= f.input_field :password, required: true, placeholder: "Password", class: "row-fluid" %>
+          <!--<input type="password" id="inputPassword" placeholder="Password" class="row-fluid">-->
+          <span class="add-on"><i class="icon-lock"></i></span> </div>
+      </div>
+
+      <div class="control-group row-fluid">
+        <div class="span3 visible-desktop"></div>
+        <div class="controls span5">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+<% end %>

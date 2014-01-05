@@ -1,0 +1,39 @@
+<div id="imgModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Image Information</h3>
+  </div>
+  <%= simple_form_for [:admin, @image], :html=> { class: "form-horizontal", remote: "true" } do |f| %>
+  <div class="modal-body">
+    <div class="control-group form-row row-fluid">
+      <%= f.label :title, class: "control-label span2"%>
+      <%= f.input_field :title, class: "span8 offset1", size: "61" %>
+    </div>
+    <div class="control-group form-row row-fluid">
+      <%= f.label :description, class: "control-label span2" %>
+      <%= f.input_field :description, as: :text, class: "span8 offset1", rows: "5", cols: "60" %>
+    </div>
+    <%= f.hidden_field :id %>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" id="close">Close</button>
+    <button class="btn btn-primary" type="submit">Save changes</button>
+  </div>
+  <% end %>
+</div>
+<script>
+  $("#imgModal form").on("submit", function(event){
+    if ( $("#imgModal form").prop("action").indexOf('/upload') >= 0) {
+      $("#image_title", $li_sel).val( $("#imgModal #image_title").val());
+      $("#image_description", $li_sel).val( $("#imgModal #image_description").val());
+      $("#imgModal #close").click();
+      return false;
+    } else {
+      var url = "<%= update_info_admin_image_path(id: -100) %>";
+      url = url.replace("-100", $("#imgModal form #image_id").val());
+      $("#imgModal form").prop("action", url);
+      $("#imgModal #close").click();
+    }
+      
+  });
+</script>

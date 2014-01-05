@@ -1,0 +1,44 @@
+<div id="sidebar" class=" collapse1 in">
+  <div class="scrollbar">
+    <div class="track">
+      <div class="thumb">
+        <div class="end"></div>
+      </div>
+    </div>
+  </div>
+  <div class="viewport">
+    <div class="overview collapse">
+
+      <ul id="sidebar_menu" class="navbar nav nav-list container full">
+        <li class="accordion-group  <% if controller_name == 'dashboard' %>active color_7<% else %>color_4<% end %>">
+          <a class="dashboard " tabindex="-1" href="<%= admin_root_path %>">
+            <img src="/images/admin/layout/menu_icons/dashboard.png" /><span>Контрольная панель</span>
+          </a>
+        </li>
+        <li class="accordion-group <% if controller_name == 'reviews' %>active color_7<% else %>color_4<% end %>">
+          <a class="accordion-group widgets collapsed" tabindex="-1" href="<%= admin_reviews_path %>">
+            <img src="/images/admin/layout/menu_icons/forms.png"><span>Отзывы</span>
+          </a>
+        </li>
+        <li class="accordion-group <% if controller_name == 'portfolio' %>active color_8<% else %>color_4<% end %>">
+          <a class="widgets"data-parent="#sidebar_menu" tabindex="-1" href="<%= admin_portfolios_path %>">
+            <img src="/images/admin/layout/menu_icons/gallery.png"><span>Портфолио</span>
+          </a>
+        </li>
+
+
+      </ul>
+
+      <div class="menu_states row-fluid container ">
+        <h2 class="pull-left">Menu Settings</h2>
+        <div class="options pull-right">
+          <button id="menu_state_1" tabindex="-1" class="color_4" rel="tooltip" data-state ="sidebar_icons" data-placement="top" data-original-title="Icon Menu">1</button>
+          <button id="menu_state_2" tabindex="-1" class="color_4 active" rel="tooltip" data-state ="sidebar_default" data-placement="top" data-original-title="Fixed Menu">2</button>
+          <button id="menu_state_3" tabindex="-1" class="color_4" rel="tooltip" data-placement="top" data-state ="sidebar_hover" data-original-title="Floating on Hover Menu">3</button>
+        </div>
+      </div>
+      <!-- End sidebar_box -->
+
+    </div>
+  </div>
+</div>

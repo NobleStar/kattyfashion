@@ -1,0 +1,15 @@
+ul.messages_layout li.review-mainbox {
+    float: none;
+}
+
+ul.messages_layout li .message_wrap .footer .review-status {
+  float: left;
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.review-approved {
+  color: #fee !important;
+  font-weight: bold;
+}

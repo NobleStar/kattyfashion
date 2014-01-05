@@ -1,0 +1,25 @@
+a.js__p_start {
+background:url(../images/bpopup_ie.gif) no-repeat; 	
+}
+
+a.js__p_start span { 
+display:none; 		
+}
+
+.footer div.copyright {
+margin-top: expression( this . parentNode . offsetHeight > this . offsetHeight ?(( this . parentNode . offsetHeight-this . offsetHeight ) / 2 + "px" ) : "0" );	
+}
+
+.right ul.tabs li a {
+text-decoration:underline;
+border-bottom:0;		
+}
+
+.right ul.tabs li a.active {
+text-decoration:none;	
+}
+
+.gallery ul li {
+*display: inline;
+_height: 261px;	
+}

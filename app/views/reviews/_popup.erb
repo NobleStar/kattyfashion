@@ -1,0 +1,57 @@
+<!-- Вызов всплывающего окна -->
+<a class="js__p_start" href="#"><span>Пользовались услугами ательe Кэтти?<br/>
+                    Оставьте свой отзыв,<br/>
+                    нам важно знать ваше мнение!</span></a>
+<!-- /Вызов всплывающего окна -->
+
+<!-- Всплывающее окно -->
+<div class="popup js__popup js__slide_top">
+  <!-- title -->
+  <div class="title_pop">
+                    <span>Пользовались услугами атель Кэтти?<br/>
+                        Оставьте свой отзыв, нам важно знать ваше мнение!
+                    </span>
+    <a href="#" class="js__p_body p_close" title="Закрыть"><span></span></a>
+  </div>
+  <!-- /title-->
+
+  <!-- содержимое -->
+  <div class="p_content">
+
+    <div class="review">
+      <%= simple_form_for Review.new, html: { class: "review ajax-form" } do |f| %>
+      <table>
+
+        <tr>
+          <td><%= f.label :name, "Ваше имя:" %></td>
+          <td><%= f.input :name, placeholder: "Введите сюда ваше имя", label: false %></td>
+        </tr>
+
+        <tr>
+          <td><%= f.label :email, "Ваш e-mail:" %></td>
+          <td><%= f.input :email, placeholder: "Введите сюда ваш e-mail", label: false %></td>
+        </tr>
+
+        <tr>
+          <td><%= f.label :text, "Текст:" %></td>
+          <td><%= f.input :text, placeholder: "Введите текст", label: false %></td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+          <td><%= f.button :submit, "Отправить" %><!--<button>Отправить</button>--></td>
+        </tr>
+      </table>
+      <% end %>
+      <div class="thank-you">
+      </div>
+      <div class="error">
+      </div>
+    </div>
+
+  </div>
+  <!-- содержимое -->
+
+</div>
+<div class="p_body js__p_body js__fadeout"></div>
+<!-- /Всплывающее окно -->

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kattyfashion</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%= stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/images/favicon/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/images/favicon/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/favicon/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/touch-icon-ipad-retina.png">
+  </head>
+  <body>
+
+    <!-- Тело сайта -->
+    <div class="site">
+      <%= render 'reviews/popup' %>
+
+      <!-- Макушка -->
+      <div class="top">
+        <div class="wfix">
+
+          <!-- Лого -->
+          <% if current_page? root_path %>
+            <span class="logo">Ателье Кэтти</span>
+          <% else %>
+            <%= link_to "", root_path, class: "logo", title: "Ателье Кэтти, главная страница" %>
+          <% end %>
+          <!-- / logo -->
+
+          <!-- Баннер -->
+          <div class="contacts-top">
+
+            <span class="tp_text">
+              Пошив и ремонт легкой одежды,<br/>
+              шуб и головных уборов. 
+            </span>
+
+            <span class="phone">
+              +7 (423) 269-04-24
+            </span>
+
+
+            <span class="address">
+              Владивосток, Ул. Нейбута, 63-б, вход в кафе<br/>"Тантал" автокомплекса.
+
+            </span>
+
+          </div>
+          <!-- /Баннер -->
+
+          <div class="clr"></div>
+
+        </div>
+      </div>
+      <!-- /top -->
+
+      <%= render 'share/menu' %>
+
+
+      <!-- Контект + фикс для всех страниц -->
+      <div class="cnt wfix">
+
+        <%= render 'share/breadcrumbs' %>
+
+
+        <!-- Главная -->
+        <div class="main">
+          <%= yield %>
+        </div>
+        <!-- /Главная -->
+
+
+
+      </div>
+      <!-- /Контект + фикс для всех страниц -->
+
+
+      <!-- Подвал -->
+      <div class="footer">
+        <div class="copyright">
+
+          <div>© 2013 «Kattyfashion.ru»</div>
+
+        </div>
+      </div>
+      <!-- /Подвал -->
+
+
+    </div>
+    <!-- /Тело сайта -->
+
+
+  </body>
+</html>

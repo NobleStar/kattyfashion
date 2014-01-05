@@ -1,0 +1,16 @@
+<%= render '/admin/reviews/delete_modal' %>
+<div class="span6">
+    <div class="box color_2 ">
+        <div class="title row-fluid">
+            <h4 class="pull-left"><span>Последние отзывы</span></h4>
+            <div class="btn-toolbar pull-right ">
+                <div class="btn-group">
+                    <%= link_to "все", admin_reviews_path, class: "btn" %> <a class="btn change_color_outside"><i class="paint_bucket"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="content row-fluid">
+            <%= render '/admin/reviews/list' %>
+        </div>
+    </div>
+</div>

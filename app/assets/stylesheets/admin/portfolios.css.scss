@@ -1,0 +1,87 @@
+// Place all the styles related to the admin/portfolio controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.files .template-download {
+  position: relative;
+}
+
+.files .template-download img {
+  width: 100%;
+  height: 200px;
+}
+.files .template-download .btn-group {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+ }
+
+.files .template-download .btn-group button, .files .template-download .btn-group a {
+  background:none;
+  border:none;
+  font-size: 22px;
+  color: #666;
+}
+.files .template-download .btn-group button:hover {
+  background:none;
+  border:none;
+  color: #fff;
+}
+@media (min-width:1000px) {
+
+.row-fluid:not(.fluid) > [class*="span"]:first-child {
+  margin-left: 0px;
+  padding-left: 20px;
+}
+}
+
+.files .template-upload {
+  position: relative;
+}
+
+.files .template-upload img {
+  width: 100%;
+  height: 200px;
+}
+.files .template-upload .btn-group {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+ }
+
+.files .template-upload .btn-group button, .files .template-upload .btn-group a {
+  background:none;
+  border:none;
+  font-size: 22px;
+  color: #666;
+}
+.files .template-upload .fade {
+  display:block;
+  height: 200px;
+}
+.files .template-upload .btn-group button:hover {
+  background:none;
+  border:none;
+  color: #fff;
+}
+.files .template-upload canvas {
+  width: 100% !important;
+  height: 200px !important;
+}
+
+#imgModal input, #imgModal textarea {
+  border: 1px solid #ddd;
+  padding-left: 5px;
+}
+.uploader span {
+  display: none;
+}
+
+.chzn-container {
+  bottom: -7px !important;
+}
+
+.chzn-container-single .chzn-single div b  {
+  margin: 0px !important;
+}

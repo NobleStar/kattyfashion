@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="box paint color_0">
+    <%= render "portfolio_form" %>
+    <%= render "image_form" %>
+  </div>
+</div>
+
+<%= render "template" %>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+      // Initialize the jQuery File Upload widget:
+      var uploadedFiles = 0, allFiles = 0;
+      $("#fileupload #image_index").val("0");
+
+      $('#fileupload').fileupload({
+        previewMaxWidth: 300,
+        previewMaxHeight: 200,
+        previewCrop: true
+      }).bind("fileuploaddone", function(e, data){
+        uploadedFiles += 1;
+        $("#fileupload #image_index").val( uploadedFiles );
+        if( allFiles == uploadedFiles ) {
+          window.location.href = "<%= admin_portfolios_path %>";
+        }
+      }).bind("fileuploadadd", function(e, data){
+        allFiles += 1;
+      }).bind("fileuploadfail", function(e, data){
+        allFiles -= 1;
+      });
+
+      $("#new_portfolio").on("ajax:success", function(e, data, status, xhr) {
+        $("#image_portfolio_id").val(data.id);
+        $('#upload_btn').click();
+        if ( allFiles == 0 ) {
+          window.location.href = "<%= admin_portfolios_path %>";
+        }
+      });
+  });
+</script>
+

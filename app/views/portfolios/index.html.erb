@@ -1,0 +1,9 @@
+<h1>Here gonna be portfolio</h1>
+
+<% @portfolios.each do |portfolio| %>
+    <% portfolio.images.each do |image| %>
+        <%= link_to portfolio_entry_path( id: image.portfolio_id, slug: portfolio.slug.to_s ) do %>
+            <%= image_tag image.image_url %>
+        <% end %>
+    <% end %>
+<% end %>

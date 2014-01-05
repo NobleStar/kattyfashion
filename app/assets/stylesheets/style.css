@@ -1,0 +1,615 @@
+/* Сторонние шрифта */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,400italic);
+
+
+
+/* Основное */     
+html {
+margin:0;
+padding:0;
+position:relative;
+}
+
+table {
+border-spacing:0;
+border-cellpading:separate;	
+}
+
+textarea {
+overflow:auto;
+}
+
+a {
+text-decoration:underline;
+color:#000;
+}
+
+a:hover {
+text-decoration: none; 
+}
+
+a img {
+border:none;
+outline:none;
+}
+
+button, input, textarea, select {
+outline:none;
+font-size:14px;
+font-family: Ubuntu, Tahoma, Arial, sans-serif;	
+}
+
+div {
+outline:none;	
+}
+
+
+
+body {
+position:relative; 
+margin:0;
+padding:0;
+color:#000;
+font-family: Ubuntu, Tahoma, Arial, sans-serif;	
+font-size:13px;
+background:url(/images/background.png) repeat #e0ddd0;	
+}
+
+/*Фиксируем ширину*/
+.wfix {
+width:940px;
+margin:0 auto;	
+}
+
+/* Зачистка после float */
+.clr {
+margin:0;
+padding:0;
+display:block;
+clear:both;	
+}
+
+/* Макушка */
+.top {
+background:url(/images/topline.png) 0px -1px repeat-x;
+}
+
+.top .wfix {
+position:relative;
+padding-bottom: 18px;		
+}
+
+.top .logo {
+background:url(/images/logo.png) no-repeat;
+width:297px;
+height:107px;
+text-decoration:none;
+display:block;
+float:left;
+text-indent:-9999px;
+margin-top: 41px;
+margin-left: 2px;	
+}
+
+
+.top .contacts-top {
+background:url(/images/bannertop.png) no-repeat;
+width:379px;
+height:147px;
+top:0px;
+right:-1px;
+position:absolute;
+}
+
+.top .contacts-top span {
+display:block;
+text-align:center;	
+text-shadow: 0px 1px 1px rgba(253, 187, 95, 0.6);
+}
+
+.top .contacts-top span.tp_text {
+font-weight:bold;
+color:#330000;
+margin-top: 11px;
+font-size: 18px;
+line-height: 18px;
+}
+
+.top .contacts-top span.phone {
+color:#3e2301;
+font-weight:bold;
+font-size: 34px;
+margin-top: 5px;
+}
+
+.top .contacts-top span.address {
+color: #000000;
+font-style: italic;
+font-size: 16px;
+margin-top: 9px;
+}
+
+
+/* Меню */
+.menu {
+background:url(/images/menu.png) repeat-x;
+height:92px;
+padding-top:8px;
+}
+
+.menu ul {
+margin:0;
+padding:0;	
+}
+
+.menu ul li {
+list-style:none;
+display:block;
+float:left;
+background:url(/images/badge.png) no-repeat;
+height:83px;
+width:25%;
+text-align:left;
+}
+
+.menu ul li:hover {
+background-position:0px -88px;	
+}
+
+.menu ul li a {
+display:inline-block;
+text-decoration:none;
+color:#663300;
+text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
+font-size: 23px;
+text-align:center;
+padding-left: 84px;
+padding-top: 23px;
+}
+
+
+.menu ul li.i1 a {
+background: url(/images/ico_menu/1.png) 18px 29px no-repeat;
+line-height: 20px;
+}
+
+
+.menu ul li.i2 a {
+background: url(/images/ico_menu/2.png) 27px 27px no-repeat;
+line-height: 20px;
+}
+
+
+.menu ul li.i3 a {
+background: url(/images/ico_menu/3.png) 24px 30px no-repeat;
+line-height: 49px;
+}
+
+
+.menu ul li.i4 a {
+background: url(/images/ico_menu/4.png) 31px 28px no-repeat;
+line-height: 49px;
+}
+
+
+
+
+
+
+/* Главная */
+.cnt .main {
+margin-top:15px;	 
+}
+
+
+.cnt .main h3, .cnt .main p{
+margin:0;
+padding:0;	
+}
+
+.cnt .main h3 {
+color:#cc6600;
+font-weight:normal;
+font-size:23px;	
+margin-bottom:3px;
+}
+
+.cnt .main p {
+color:#000;	
+font-size:16px;
+line-height:20px;
+margin-bottom:13px;
+}
+
+.cnt .main p a {
+color:#009999;
+text-decoration:underline;	
+}
+
+.cnt .main p a:hover {
+text-decoration: none;	
+}
+
+/* Подвал */
+.footer {
+background:url(/images/footer.png) repeat-x;
+height:80px;
+margin-top:43px;
+margin-bottom:20px;
+text-align:center;
+color:#fff;
+text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+font-size: 15px;
+display: table;	
+width:100%;
+}
+
+.footer a {
+text-decoration: none;
+color:#fff;	
+}
+
+.footer div.copyright {
+display: table-cell;
+vertical-align: middle;	
+
+}
+
+
+/* speedbar */
+.speedbar {
+color:#000000;
+margin-top:13px;
+font-size:14px;	
+}
+
+.speedbar a {
+text-decoration:none;	
+}
+
+.speedbar a:hover {
+text-decoration:underline;	
+}
+
+.speedbar span {
+background:url(/images/arrow.png) left center no-repeat;
+margin-left: 5px;
+padding-left: 12px;	
+}
+
+
+
+/* Галерея */
+.cnt .gallery {
+margin-top:11px;
+overflow:hidden;
+width:960px;	 
+}
+
+
+.cnt .gallery h1 {
+margin-top:0px;
+padding:0;	
+color:#cc6600;
+font-weight:normal;
+font-size:22px;	
+margin-bottom:6px;
+}
+
+.gallery ul {
+margin:0;
+padding:0;
+width:980px;	
+}
+
+.gallery ul li {
+list-style:none;
+width:216px;
+margin-top:10px;
+margin-right:22px;
+min-height: 261px;
+display: -moz-inline-stack;
+display: inline-block;
+vertical-align: top;
+zoom: 1;
+}
+
+.gallery ul li div.image {
+width:207px;
+height:207px;	
+cursor:pointer;
+overflow:hidden;
+border:6px solid #ffffff;
+}
+
+.gallery ul li.best div.image {
+border:6px solid #ff9900;	
+}
+
+.gallery ul li div.image img {
+min-height:207px;
+max-width:500px;
+min-width:207px;
+display:block;
+margin:0 auto;	
+}
+
+
+.gallery ul li div.image a {
+text-decoration:none;	
+}
+
+.gallery ul li span.title {
+margin-top:7px;
+display:block;
+font-size:14px;
+}
+
+.gallery ul li a.full {
+color:#009999;
+text-decoration:underline;	
+margin-top:1px;
+display:inline-block;
+font-size:14px;
+}
+
+.gallery ul li.best a.full:hover {
+text-decoration:none;	
+}
+
+
+/*Постраничная навигация*/
+.pagenav {
+margin-top:70px;
+text-align:center;
+margin-bottom:100px;	
+}
+
+.pagenav ul {
+margin:0;
+padding:0;	
+}
+
+.pagenav ul li {
+list-style:none;
+display: inline-block;
+*display: inline;
+margin-right:23px;
+line-height: 28px;
+height:28px;	
+}
+
+.pagenav ul li.next a, .pagenav ul li.prew a {
+font-weight:normal;
+font-size:15px;
+border-bottom:0;
+text-decoration:underline;
+}
+
+.pagenav ul li.next a:hover, .pagenav ul li.prew a:hover {
+text-decoration:none;	
+}
+
+.pagenav ul li.next {
+margin-right:0px;	
+}
+
+.pagenav ul li a {
+color:#009999;
+text-decoration:none;	
+font-weight:bold;
+border-bottom:2px solid #009999;
+font-size:18px;
+padding-bottom:1px;
+}
+
+.pagenav ul li a:hover {
+border-bottom:0;	
+}
+
+.pagenav ul li span {
+background: url(/images/navi_active.png) repeat;
+color: #000;
+font-size: 17px;
+font-weight: normal;
+min-width: 20px;
+line-height: 28px;
+padding-left: 4px;
+padding-right: 4px;
+text-align:center;
+height: 28px;
+display: inline-block;
+-webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.28);
+-moz-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.28);
+box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.28);
+}
+
+
+
+
+/* Контакты */
+.cnt .contacts {
+margin-top:14px; 
+margin-bottom:70px;
+}
+
+
+.cnt .contacts h1 {
+margin-top:0px;
+padding:0;	
+color:#cc6600;
+font-weight:normal;
+font-size:22px;	
+margin-bottom:10px;
+}
+
+
+.cnt .contacts  p {
+font-size: 15px;
+line-height: 23px;
+margin-bottom:22px;	
+}
+
+.cnt .contacts p span.open {
+color:#009999;	
+}
+
+.cnt .contacts .phone  {
+color:#cc6600;
+font-weight:normal;
+font-size:18px;	
+margin-bottom:26px;	
+}
+
+.cnt .contacts .phone span {
+color: #663300;
+font-weight: bold;
+margin-left: 13px;
+font-size: 20px;
+}
+
+
+
+.cnt .contacts .feedback h2  {
+color:#cc6600;
+font-weight:normal;
+font-size:18px;	
+margin-bottom:13px;
+margin-top:0px;	
+}
+
+
+
+
+
+.cnt .contacts .feedback {
+color:#000;
+font-size:14px;
+width:450px;
+}
+
+.cnt .contacts .feedback table {
+width:100%;
+border-spacing:0px;
+border-cellpading:separate;
+}
+
+
+.cnt .contacts .feedback tr td:first-child {
+width:92px;
+vertical-align:top;	
+padding-top:6px;	
+}
+
+.cnt .contacts .feedback td input[type="text"] {
+background:#ffffff;
+padding:3px;
+border-top:1px solid #cfcfcf;
+border-left:1px solid #cfcfcf;
+border-right:0;
+border-bottom:0;
+-webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.12);
+-moz-box-shadow:    inset 1px 1px 3px rgba(0, 0, 0, 0.12);
+box-shadow:      inset 1px 1px 3px rgba(0, 0, 0, 0.12);
+height:21px;
+width:357px;
+margin-bottom:6px;
+color:#000;
+font-size:13px;	
+font-family: Ubuntu, Tahoma, Arial, sans-serif;	
+}
+
+
+
+.cnt .contacts .feedback td textarea {
+background:#ffffff;
+padding:3px;
+border-top:1px solid #cfcfcf;
+border-left:1px solid #cfcfcf;
+border-right:0;
+border-bottom:0;
+height:274px;
+/* width:357px; */
+margin-bottom:10px;
+color:#000;
+font-size:13px;	
+resize:vertical;
+font-family: Ubuntu, Tahoma, Arial, sans-serif;	
+}
+
+
+.cnt .contacts .feedback td button {
+background:url(/images/button.png) repeat-x;
+height:33px;
+padding-left:30px;
+padding-right:30px;
+color:#fff;
+text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+font-size:14px;
+font-weight:bold;
+border:0;
+border-radius:6px;
+float:right;
+cursor:pointer;	
+-webkit-box-shadow: 0px 3px 0px rgba(6, 0, 0, 0.1);
+-moz-box-shadow:    0px 3px 0px rgba(6, 0, 0, 0.1);
+box-shadow:         0px 3px 0px rgba(6, 0, 0, 0.1);
+font-family: Ubuntu, Tahoma, Arial, sans-serif;	
+}
+
+.cnt .contacts .feedback td button:hover {
+background-position:0px -37px;	
+}
+
+
+.contacts .left {
+width:507px;
+float:left;	
+}
+
+.contacts .right {
+float:right;
+width:391px;	
+}
+
+
+.contacts .right div {
+display:inline-block;
+margin-bottom:7px;	
+}
+
+.contacts .right div img {
+width:100%;
+border:6px solid #fff;	
+}
+
+.right ul.tabs {
+margin:0;
+padding:0;	
+}
+
+.right ul.tabs li {
+list-style:none;	
+}
+
+.right ul.tabs li a {
+font-size:16px;
+color:#009999;
+text-decoration:none;
+border-bottom:1px dashed #009999;
+
+}
+
+.right ul.tabs li a.active {
+border-bottom:0;
+}
+
+.right ul.tabs li.t1{
+padding-left:18px;
+float:left;	
+}
+
+.right ul.tabs li.t2{
+padding-right:18px;	
+float:right;
+}

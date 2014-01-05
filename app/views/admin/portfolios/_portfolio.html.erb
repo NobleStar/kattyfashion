@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <label class="checkbox ">
+      <input type="checkbox">
+    </label>
+  </td>
+  <td><%= portfolio.title%></td>
+  <td><%= portfolio.description %></td>
+  <td class="ms">
+    <div class="btn-group">
+      <%= link_to edit_admin_portfolio_path(portfolio), :class => "btn btn-small", :rel => "tooltip", :data => {:placement => "left", "original-title" => " Edit "} do %>
+        <i class="gicon-edit"></i>      
+      <% end %>
+      <%= link_to admin_portfolio_path(portfolio), class:"btn btn-small", :rel => "tooltip", data: { confirm: 'Are you sure?', :placement => "bottom", "original-title" => " Remove "}, :method=>"DELETE" do %>
+        <i class="gicon-remove"></i>      
+      <% end %>
+    </div>
+  </td>
+</tr>

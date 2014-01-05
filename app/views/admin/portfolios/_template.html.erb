@@ -1,0 +1,104 @@
+<script>
+  var fileUploadErrors = {
+  maxFileSize: 'File is too big',
+  minFileSize: 'File is too small',
+  acceptFileTypes: 'Filetype not allowed',
+  maxNumberOfFiles: 'Max number of files exceeded',
+  uploadedBytes: 'Uploaded bytes exceed file size',
+  emptyResult: 'Empty file upload result'
+  };
+</script>
+
+<!-- The template to display files available for upload -->
+
+<script id="template-upload" type="text/x-tmpl">
+  {% for (var i=0, file; file=o.files[i]; i++) { %}
+  <li class="template-upload fade span3">
+    <div class="thumbnail">
+      <div class="preview"><span class="fade"></span></div>
+      <div class="start hide">{% if (!o.options.autoUpload) { %}
+        <button class="btn btn-primary">
+          <i class="icon-upload icon-white"></i>
+          <span>{%=locale.fileupload.start%}</span>
+        </button>
+        {% } %}
+      </div>
+      <div class="hide">
+        <input type="text" name="image[title][]" id="image_title"/>
+        <input type="textarea" name="image[description][]" id="image_description" />
+      </div>
+      <div class="btn-group">
+        <div class="cancel pull-right">{% if (!i) { %}
+          <button class="btn btn-danger">
+            <i class="icon-trash"></i>
+          </button>
+          {% } %}
+        </div>
+        
+        <div class="pull-right">{% if (!i) { %}
+          <a data-toggle="modal" href="#imgModal" class="btn btn-danger">
+            <i class="icon-magic"></i>
+          </a>
+          
+          {% } %}
+        </div>
+      </div>
+    </div>
+  </li>
+  {% } %}
+</script>
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
+  {% for (var i=0, file; file=o.files[i]; i++) { %}
+    <li class="template-download fade span3">
+      <div class="thumbnail">
+      {% if (file.error) { %}
+        <div></div>
+        <div class="error" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</div>
+        {% } else { %}
+        <div class="preview">{% if (file.thumbnail_url) { %}
+          <a href="{%=file.url%}" title="{%=file.name%}" rel="gallery" download="{%=file.name%}"><img src="{%=file.thumbnail_url%}"></a>
+          {% } %}</div>
+        {% } %}
+        
+        <div class="btn-group">
+          <div class="delete pull-right">
+            <button class="btn btn-danger" data-toggle="modal" href="#myModal" rel="tooltip" data-placement="top" data-original-title="Edit Photo" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}">
+              <i class="icon-trash"></i>
+            </button>
+          </div>
+          <div class="pull-right">
+            <a data-toggle="modal" href="#imgModal" class="btn btn-danger">
+              <i class="icon-magic"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    {% } %}
+</script>
+<script>
+  var $li_sel;
+  $(".template-upload a[href='#imgModal']").live("click", function(){
+    $("#imgModal form").prop('action', '/upload');
+    $li_sel = $(this).parents("li");
+    $("#imgModal form #image_title").val($("#image_title", $li_sel).val());
+    $("#imgModal form #image_description").val($("#image_description", $li_sel).val());
+
+  });
+  $(".template-download a[href='#imgModal']").live("click", function(){
+    $("#imgModal form").prop('action', '/download');
+
+    var href = $("img", $(this).parents("li")).prop("src");
+    var t = href.substr(0, href.lastIndexOf("/") );
+    var id = t.substr(t.lastIndexOf("/") + 1, t.length);
+    $("#imgModal form #image_id").val( id );
+
+    var url = "<%= fetch_admin_image_path(-100) %>";
+    url = url.replace("-100", id);
+    $.getJSON(url, function(data, status, xhr){
+      $("#imgModal form #image_title").val( data.title);      
+      $("#imgModal form #image_description").val( data.description);      
+    })
+  });
+</script>

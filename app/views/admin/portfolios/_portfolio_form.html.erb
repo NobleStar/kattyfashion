@@ -1,0 +1,39 @@
+<%= form_for [:admin, @portfolio], remote:true, html: {class: "form-horizontal row-fluid"} do |f| %>
+  <div class="title row-fluid">
+    <h4 class="pull-left">
+      <span>Новая работа в портфолио</span>
+    </h4>
+    <div class="btn-toolbar pull-right ">
+      <div class="btn-group">
+        <a class="btn change_color_outside"><i class="paint_bucket"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content top">
+    <div class="form-row control-group row-fluid">
+      <div class="controls">
+        <%= f.text_field :title, label: false, placeholder: "Название работы", tabindex: 1 %>
+      </div>
+    </div>
+    <div class="form-row control-group row-fluid">
+      <div class="controls">
+        <%= f.text_area :description, label: false, placeholder: "Описание работы", tabindex: 2, class: "row-fluid autogrow", rows: 5, cols: 25   %>
+      </div>
+    </div>
+
+    <div class="form-row control-group row-fluid">
+      <div class="controls">
+        <%= f.submit "Save Changes", tabindex: 3, class: "btn-primary autogrow btn"  %>
+      </div>
+    </div>
+  </div>
+
+  <div class="title">
+    <h3>
+        <i class=" icon-bar-chart"></i>
+        <span>Изоражения</span>
+    </h3>
+  </div>
+
+<% end %>

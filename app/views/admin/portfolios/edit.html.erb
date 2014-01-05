@@ -1,0 +1,58 @@
+<div class="row-fluid">
+  <div class="box paint color_0">
+    <%= render "portfolio_form" %>
+    <%= render "image_form" %>
+  </div>
+</div>
+
+<%= render "template" %>
+<%= render "modal_form" %>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+      // Initialize the jQuery File Upload widget:
+      var uploadedFiles = 0, allFiles = 0;
+      $("#fileupload #image_index").val("0");
+
+      $('#fileupload').fileupload({
+        sequentialUploads: true,
+        previewMaxWidth: 200,
+        previewMaxHeight: 150,
+        previewCrop: true
+      }).bind("fileuploaddone", function(e, data){
+        uploadedFiles += 1;
+        $("#fileupload #image_index").val( uploadedFiles );
+        if( allFiles == uploadedFiles ) {
+          window.location.href = "<%= admin_portfolios_path %>";
+        }
+      }).bind("fileuploadadd", function(e, data){
+        allFiles += 1;
+      }).bind("fileuploadfail", function(e, data){
+        allFiles -= 1;
+      });
+
+      $("#edit_portfolio_" + "<%= @portfolio.id %>").on("ajax:success", function(e, data, status, xhr) {
+        $("#image_portfolio_id").val("<%= @portfolio.id %>");
+        $('#upload_btn').click();
+        if ( allFiles == 0 ) {
+          window.location.href = "<%= admin_portfolios_path %>";
+        }
+        
+      });
+      
+      // Load existing files:
+      $.getJSON("<%= admin_images_path(portfolio_id: @portfolio.id) %>", function (files) {
+        var fu = $('#fileupload').data('blueimpFileupload'), template;
+
+        fu._adjustMaxNumberOfFiles(-files.length);
+        template = fu._renderDownload(files).appendTo($('#fileupload .files'));
+
+        // Force reflow:
+        fu._reflow = fu._transition && template.length && template[0].offsetWidth;
+        template.addClass('in');
+        $('#loading').remove();
+      });
+
+  });
+</script>
+
